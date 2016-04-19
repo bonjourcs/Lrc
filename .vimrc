@@ -1,12 +1,20 @@
 "==================================================
-"                Basic Edit Setting               "
+"                Basic Setting                    "
 "==================================================
 "disable compatible
 set nocompatible
 "disable autobackup
 set nobackup
+"auto save
+set autowrite
+"share clipboard
+set clipboard+=unnamed
+"enable plugin
+filetype plugin on
+"enable confirm window
+set confirm
 "==================================================
-"              	 Display Setting                  " 
+"              	 Appearance Setting               " 
 "==================================================
 "set syntax on
 syntax on
@@ -18,10 +26,12 @@ set ru
 syntax on
 "set vim scheme
 colorscheme desert
+"show mode
+set showmode
 "set font
 set guifont=Ubuntu_Mono:h14
 "set status bar info
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\[HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\[HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 set laststatus=2
 "==================================================
 "              Indent Setting                     "	
@@ -38,6 +48,8 @@ set shiftwidth=4
 set ts=4 
 "global tab key
 set expandtab
+"smart indent
+set smartindent
 "set auto indent
 set autoindent
 "enable C/C++ indent
@@ -57,5 +69,10 @@ call vundle#begin()
 "Bundle List
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'matten/emmet-vim'
+Plugin 'bling/vim-airline'
+Plugin 'a.vim'
 call vundle#end()
 filetype plugin indent on
+"==================================================
+"                 Plugin Settings                 "
+"==================================================
