@@ -1,0 +1,14 @@
+"==================================
+"         Bundle Settings         "
+"==================================
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+"==================================
+"         Bundle List             "
+"==================================
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'matten/emmet-vim'
+call vundle#end()
+filetype plugin indent on
