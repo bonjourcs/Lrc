@@ -49,8 +49,13 @@ set cindent
 set wildmenu
 set wildmode=full
 "==================================================
-"             Bundle  Setting                     " 
+"                 Bundle Settings                 "
 "==================================================
-if filereadable(expand("~/_vimrc.bundles"))
-source ~/_vimrc.bundles
-endif
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+"Bundle List
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'matten/emmet-vim'
+call vundle#end()
+filetype plugin indent on
