@@ -13,6 +13,8 @@ set clipboard+=unnamed
 filetype plugin on
 "enable confirm window
 set confirm
+"show command 
+set showcmd
 "==================================================
 "              	 Appearance Setting               " 
 "==================================================
@@ -28,6 +30,8 @@ syntax on
 colorscheme desert
 "show mode
 set showmode
+"disable welcome list
+set shortmess=atI
 "set font
 set guifont=Ubuntu_Mono:h14
 "set status bar info
