@@ -5,6 +5,7 @@
 set nocompatible
 "disable autobackup
 set nobackup
+set noswapfile
 "auto save
 set autowrite
 "share clipboard
