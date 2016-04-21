@@ -68,7 +68,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 "Bundle List
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'matten/emmet-vim'
+Plugin 'mattn/emmet-vim'
 Plugin 'bling/vim-airline'
 Plugin 'a.vim'
 call vundle#end()
