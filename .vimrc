@@ -16,6 +16,8 @@ filetype plugin on
 set confirm
 "show command 
 set showcmd
+"ingore case
+set ignorecase
 "==================================================
 "              	 Appearance Setting               " 
 "==================================================
@@ -59,6 +61,14 @@ set smartindent
 set autoindent
 "enable C/C++ indent
 set cindent
+"==================================================
+"              	 Encoding   Setting               " 
+"==================================================
+set enc=utf-8
+set fenc=utf-8
+set langmenu=zh_CN.UTF-8
+language message zh_CN.UTF-8
+set fencs=ucs-bom,utf-8,shift-jis,gb18030,gbk,gb2312,cp936
 "==================================================
 "             Autocomplete Setting                " 
 "==================================================
