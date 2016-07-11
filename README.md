@@ -1,4 +1,4 @@
-# lrc
+# lrc <img src="https://img.shields.io/badge/lrc-v1.1-blue.svg">
 lrc是本人的Vim配置备份文件，使用[Vundle](https://github.com/)进行插件管理。
 # Installation
 ## Git环境
