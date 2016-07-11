@@ -1,93 +1,127 @@
 "==================================================
-"                Basic Setting                    "
+"                   基本设置
 "==================================================
-"disable compatible
+"不采用兼容模式
 set nocompatible
-"disable autobackup
+"不自动备份，不生成.swp文件
 set nobackup
 set noswapfile
-"auto save
+"自动保存
 set autowrite
-"share clipboard
+"共享粘贴板
 set clipboard+=unnamed
-"enable plugin
+"允许使用插件
 filetype plugin on
-"enable confirm window
+"允许弹出确认窗口
 set confirm
-"show command 
+"显示命令窗口
 set showcmd
-"ingore case
+"忽略大小写
 set ignorecase
 "==================================================
-"              	 Appearance Setting               " 
+"                   外观设置
 "==================================================
-"set syntax on
+"设置语法高亮
 syntax on
-"show line number
+"显示行号
 set nu
-"show ruler
+"显示标尺
 set ru
-"enable syntax 
+"设置语法高亮
 syntax on
-"set vim scheme
+"设置Vim主题
 colorscheme desert
-"show mode
+"底端显示模式
 set showmode
-"disable welcome list
+"取消欢迎界面
 set shortmess=atI
-"set font
+"设置字体
 set guifont=Ubuntu_Mono:h14
-"set status bar info
+"设置状态栏信息 使用了airline,因此用不到了
 "set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\[HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 set laststatus=2
 "==================================================
-"              Indent Setting                     "	
+"                    缩进设置
 "==================================================
-"enalbe backspace
+"设置跳行宽度
 set backspace=2
-"set expand width
 set expandtab
 set tabstop=4
 set softtabstop=4
-"set shiftwidth
 set shiftwidth=4
-"set tab width
 set ts=4 
-"global tab key
+"全局可使用tab
 set expandtab
-"smart indent
+"智能对齐
 set smartindent
-"set auto indent
+"允许自动对齐
 set autoindent
-"enable C/C++ indent
+"使用C/C++缩进样式
 set cindent
 "==================================================
-"              	 Encoding   Setting               " 
+"                    编码设置
 "==================================================
-set enc=utf-8
-set fenc=utf-8
-set langmenu=zh_CN.UTF-8
+"设置缓冲区编码格式
+set encoding=utf-8
+"设置「猜想」编码列表
+set fileencodings=utf-8,gkb,gb2312,chinese
+"设置文件保存编码
+if has("win32")
+    set fileencoding=chinese
+else
+    set fileencoding=utf-8
+endif
+"解决菜单乱码
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
 language message zh_CN.UTF-8
-set fencs=ucs-bom,utf-8,shift-jis,gb18030,gbk,gb2312,cp936
+"解决终端乱码
+set termencoding=gbk "中文环境终端的默认编码
 "==================================================
-"             Autocomplete Setting                " 
+"                   自动补全设置
 "==================================================
-"command autocomplete
-set wildmenu
-set wildmode=full
+" 输入",',{,[等 自动补全将光标定位到中间
+inoremap ( ()<ESC>i
+inoremap ) <C-r>=ClosePair(')')<CR>
+inoremap { {}<ESC>i
+inoremap } <C-r>=ClosePair('}')<CR>
+inoremap [ []<ESC>i
+inoremap ] <C-r>=ClosePair(']')<CR>
+inoremap " ""<ESC>i
+inoremap ' ''<ESC>i
+
+function! ClosePair(char)
+    if getline('.')[col('.' - 1)] == a:char
+        return "\<Right>"
+    else
+        return a:char
+    endif
+endfunction
+"设置自动补全提示样式
+set completeopt=longest,menu
 "==================================================
-"                 Bundle Settings                 "
+"               Bundle设置
 "==================================================
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-"Bundle List
+"插件列表
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'bling/vim-airline'
 Plugin 'a.vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'iamcco/markdown-preview.vim'
 call vundle#end()
 filetype plugin indent on
 "==================================================
-"                 Plugin Settings                 "
+"                 按键影射
 "==================================================
+"<C-s> 保存文件
+imap <C-s> <ESC>:w!<CR>
+nmap <C-s> :w!<CR>
+"<C-a> 全选
+nmap <C-a> ggVG
+imap <C-a> <ESC>ggVG
+"<C-c> 复制
+map <C-c> y
