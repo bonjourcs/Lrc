@@ -29,6 +29,8 @@ cp 「任何你喜欢的目录」/lrc/.vimrc ~/.vimrc
 PluginInstall
 ```
 # Update List
+- v1.2
+使用中文注释
 - v1.1
 增加Vundle安装说明
 - v1.0
