@@ -1,9 +1,12 @@
-# lrc <img src="https://img.shields.io/badge/lrc-v1.1-blue.svg">
+# lrc <img src="https://img.shields.io/badge/lrc-v1.2-blue.svg">
 lrc是本人的Vim配置备份文件，使用[Vundle](https://github.com/)进行插件管理。
+# Required
+- Git
+- Vundle
 # Installation
-## Git环境
-我假设你已经配置好了本地Git环境
-## 安装Vundle
+## Git
+我假设你已经配置好了本地Git
+## Vundle
 安装[Vundle](https://github.com/)最简单的方式就是在终端(Liunx)输入
 ```
 git clone https://github.com/VundleVim/Vundle.vim.git
@@ -24,7 +27,7 @@ git clone https://github.com/bonjourcs/lrc.git 「任何你喜欢的目录」
 ```
 cp 「任何你喜欢的目录」/lrc/.vimrc ~/.vimrc
 ```
-最后打开一个Vim/GVim窗口，在命令模式下输入
+最后打开一个Vim/gVim窗口，在命令模式下输入
 ```
 PluginInstall
 ```
