@@ -3,6 +3,7 @@ lrc是本人的Vim配置备份文件，使用[Vundle](https://github.com/)进行
 # Required
 - Git
 - Vundle
+
 # Installation
 ## Git
 我假设你已经配置好了本地Git
