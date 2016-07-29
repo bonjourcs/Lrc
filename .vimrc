@@ -31,17 +31,70 @@ set nu
 set ru
 "设置语法高亮
 syntax on
-"设置Vim主题
-colorscheme desert
 "底端显示模式
 set showmode
 "取消欢迎界面
-set shortmess=atl
+set shortmess=atI
 "设置字体
 set guifont=Consolas:h14
-"设置状态栏信息 使用了airline,因此用不到了
-"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\[HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+"禁用工具栏和菜单栏
+set guioptions-=T
+set guioptions-=m
+"设置状态栏宽度
 set laststatus=2
+"高亮光标所在当前行
+au WinLeave * set nocursorline nocursorcolumn
+au WinEnter * set cursorline cursorcolumn
+set cursorline
+"==================================================
+"                  自动生成文件头 
+"==================================================
+"进行版权声明的设置
+"添加或更新头
+map <F4> :call TitleDet()<cr>'s
+function AddTitle()
+    call append(0,"/*=============================================")
+    call append(1,"*")
+    call append(2,"* Author: BonjourCS(Liang Chenghao)")
+    call append(3,"*")
+    call append(4,"* Email: lch_office@foxmail.com")
+    call append(5,"*")
+    call append(6,"* Last modified: ".strftime("%Y-%m-%d %H:%M"))
+    call append(7,"*")
+    call append(8,"* Filename: ".expand("%:t"))
+    call append(9,"*")
+    call append(10,"* Description: ")
+    call append(11,"*")
+    call append(12,"=============================================*/")
+    echohl WarningMsg | echo "Successful in adding the copyright." | echohl None
+endf
+"更新最近修改时间和文件名
+function UpdateTitle()
+    normal m'
+    execute '/* *Last modified:/s@:.*$@\=strftime(":\t%Y-%m-%d %H:%M")@'
+    normal ''
+    normal mk
+    execute '/* *Filename:/s@:.*$@\=":\t\t".expand("%:t")@'
+    execute "noh"
+    normal 'k
+    echohl WarningMsg | echo "Successful in updating the copy right." | echohl None
+endfunction
+"判断前10行代码里面，是否有Last modified这个单词，
+"如果没有的话，代表没有添加过作者信息，需要新添加；
+"如果有的话，那么只需要更新即可
+function TitleDet()
+    let n=1
+    "默认为添加
+    while n < 10
+        let line = getline(n)
+        if line =~ '^\*\sLast\smodified:\S*.*$'
+            call UpdateTitle()
+            return
+        endif
+        let n = n + 1
+    endwhile
+    call AddTitle()
+endfunction
 "==================================================
 "                    缩进设置
 "==================================================
@@ -69,7 +122,7 @@ set cindent
 "设置缓冲区编码格式
 set encoding=utf-8
 "设置「猜想」编码列表
-set fileencodings=utf-8,gkb,gb2312,chinese
+set fileencodings=utf-8,gbk,gb2312,chinese
 "设置文件保存编码
 if has("win32")
     set fileencoding=chinese
@@ -102,24 +155,6 @@ function! ClosePair(char)
         return a:char
     endif
 endfunction
-
-"设置自动补全提示样式
-set completeopt=longest,menu
-"==================================================
-"               Bundle设置
-"==================================================
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-"插件列表
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'bling/vim-airline'
-Plugin 'a.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'iamcco/markdown-preview.vim'
-call vundle#end()
-filetype plugin indent on
 "==================================================
 "                 按键映射
 "==================================================
@@ -131,3 +166,55 @@ nmap <C-a> ggVG
 imap <C-a> <Esc>ggVG
 map <C-c> y
 imap <C-c> y
+"设置自动补全提示样式
+set completeopt=longest,menu
+"==================================================
+"               Bundle设置
+"==================================================
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+"插件列表
+"|---主题
+Plugin 'tomasr/molokai'
+"|---插件管理器
+Plugin 'VundleVim/Vundle.vim'
+"|---快速对齐
+Plugin 'godlygeek/tabular'
+"|---前端神器
+Plugin 'mattn/emmet-vim'
+"|---状态栏
+Plugin 'bling/vim-airline'
+"|---匹配括号
+Plugin 'tpope/vim-surround'
+"|---注释神器
+Plugin 'tpope/vim-commentary'
+"|---官方注释
+Plugin 'tComment'
+Plugin 'a.vim'
+"|--树形浏览
+Plugin 'scrooloose/nerdtree'
+call vundle#end()
+filetype plugin indent on
+"==================================================
+"               插件设置
+"==================================================
+"---molokai主题设置
+""colorscheme molokai
+""let g:molokai_original=1
+""let g:rehash256=1
+set background=dark
+colorscheme solarized
+"---NERDTree配置 
+let NERDChristmasTree=0
+let NERDTreeWinSize=35
+let NERDTreeChDirMode=2
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
+let NERDTreeShowBookmarks=1
+let NERDTreeWinPos="left"
+"启动时打开NERDTree,暂时不需要
+"autocmd vimenter * if !argc() | NERDTree | endif
+"如果只剩下NERDTree时，关闭Vim
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"使用<F12>打开NERDTree
+nmap <F12> :NERDTreeToggle<cr>
