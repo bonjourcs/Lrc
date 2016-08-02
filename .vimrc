@@ -122,7 +122,7 @@ set cindent
 "设置缓冲区编码格式
 set encoding=utf-8
 "设置「猜想」编码列表
-set fileencodings=utf-8,gbk,gb2312,chinese
+set fileencodings=utf-8,gbk,cp936,chinese
 "设置文件保存编码
 if has("win32")
     set fileencoding=chinese
@@ -134,7 +134,11 @@ source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 language message zh_CN.UTF-8
 "解决终端乱码
-set termencoding=gbk "中文环境终端的默认编码
+if has("win32")
+	set termencoding=gbk
+else
+	set termencoding=utf-8
+endif
 "==================================================
 "                   自动补全设置
 "==================================================
@@ -175,7 +179,9 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 "插件列表
-"|---主题
+"|---
+Plugin 'altercation/vim-colors-solarized'
+"|---molokai主题
 Plugin 'tomasr/molokai'
 "|---插件管理器
 Plugin 'VundleVim/Vundle.vim'
@@ -200,11 +206,12 @@ filetype plugin indent on
 "               插件设置
 "==================================================
 "---molokai主题设置
-""colorscheme molokai
-""let g:molokai_original=1
-""let g:rehash256=1
-set background=dark
-colorscheme solarized
+colorscheme molokai
+let g:molokai_original=1
+let g:rehash256=1
+""set background=light
+""colorscheme solarized
+""let g:solarized_termcolors=256
 "---NERDTree配置 
 let NERDChristmasTree=0
 let NERDTreeWinSize=35
