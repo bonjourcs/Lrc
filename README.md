@@ -1,10 +1,11 @@
-# lrc <img src="https://img.shields.io/badge/lrc-v1.3-blue.svg">
+# lrc <a href="https://github.com/bonjourcs/lrc"><img src="https://img.shields.io/badge/lrc-v1.3-blue.svg"></a>
 lrc是本人的Vim配置备份文件，使用[Vundle](https://github.com/)进行插件管理。
-# Required
+
+# 预备工具
 - Git
 - Vundle
 
-# Installation
+# 安装
 ## Git
 我假设你已经配置好了本地Git
 ## Vundle
@@ -32,7 +33,7 @@ cp 「任何你喜欢的目录」/lrc/.vimrc ~/.vimrc
 ```
 PluginInstall
 ```
-# Update List
+# 更新类表
 - v1.3
 使用solarized主题 并使用了诸如[NERDTree](https://github.com/scrooloose/nerdtree)之类有用的插件
 添加了新建文件按<F4>自动添加文件头
