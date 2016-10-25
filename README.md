@@ -33,7 +33,7 @@ cp 「任何你喜欢的目录」/lrc/.vimrc ~/.vimrc
 ```
 PluginInstall
 ```
-# 更新类表
+# 更新列表
 - v1.3
 使用solarized主题 并使用了诸如[NERDTree](https://github.com/scrooloose/nerdtree)之类有用的插件
 添加了新建文件按<F4>自动添加文件头
