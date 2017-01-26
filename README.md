@@ -1,39 +1,41 @@
-# lrc <a href="https://github.com/bonjourcs/lrc"><img src="https://img.shields.io/badge/lrc-v1.3-blue.svg"></a>
-lrc是本人的Vim配置备份文件，使用[Vundle](https://github.com/)进行插件管理。
+# lrc <a href="https://github.com/bonjourcs/lrc"><img src="https://img.shields.io/badge/lrc-v1.3.1-blue.svg"></a>
+lrc是本人的Vim配置备份文件，使用[Vundle](https://github.com/VundleVim/Vundle.vim)进行插件管理。
 
 # 预备工具
 - Git
 - Vundle
 
 # 安装
-## Git
-我假设你已经配置好了本地Git
-## Vundle
-安装[Vundle](https://github.com/)最简单的方式就是在终端(Liunx)输入
+## 安装Git
+Git的详细配置教程可以在[ProGit(中文版)](http://git.oschina.net/progit/)找到，使用lrc时，只需要在[Git官网](https://git-scm.com/downloads)下载合适的版本，并把git命令加入环境变量。
+## 安装Vundle
+- Linux
+在终端输入：
 ```
-git clone https://github.com/VundleVim/Vundle.vim.git
-~/.vim/bundle/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
-或者在命令提示符(Windows)里输入
+- Windows
+在命令行中输入：
 ```
-git clone https://github.com/VundleVim/Vundle.vim.git
-C:\Users\<你的用户名>\.vim\bundle\Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git C:\Users\<你的用户名>\.vim\bundle\Vundle.vim
 ```
 如果克隆Vundle仓库到本地出现`目录不存在`提示，请手动在家目录(Linux)或者用户目录(Windows)下创建「.vim/bundle」目录
-## 安装lrc
-在终端(Linux)或者命令提示符(Windows)里输入
+## 使用lrc
+1. 在任意一个Windows/Linux目录(**DIR**)，打开命令提示行/终端，输入如下脚本：
 ```
-git clone https://github.com/bonjourcs/lrc.git 「任何你喜欢的目录」
+git clone https://github.com/bonjourcs/lrc.git
 ```
-然后执行
+2. 执行
 ```
-cp 「任何你喜欢的目录」/lrc/.vimrc ~/.vimrc
+cp <DIR>/lrc/.vimrc ~/.vimrc
 ```
-最后打开一个Vim/gVim窗口，在命令模式下输入
+3. 打开一个Vim/gVim窗口，在命令模式下输入
 ```
-PluginInstall
+:PluginInstall
 ```
 # 更新列表
+- v1.3.1
+整理lrc安装文档
 - v1.3
 使用solarized主题 并使用了诸如[NERDTree](https://github.com/scrooloose/nerdtree)之类有用的插件
 添加了新建文件按<F4>自动添加文件头
