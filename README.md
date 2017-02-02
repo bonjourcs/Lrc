@@ -21,15 +21,19 @@ git clone https://github.com/VundleVim/Vundle.vim.git C:\Users\<你的用户名>
 ```
 如果克隆Vundle仓库到本地出现`目录不存在`提示，请手动在家目录(Linux)或者用户目录(Windows)下创建「.vim/bundle」目录
 ## 使用lrc
-1. 在任意一个Windows/Linux目录(**DIR**)，打开命令提示行/终端，输入如下脚本：
+a. 在任意一个Windows/Linux目录(**DIR**)，打开命令提示行/终端，输入如下脚本：
 ```
 git clone https://github.com/bonjourcs/lrc.git
 ```
-2. 执行
+b. Linux下使用如下脚本
 ```
 cp <DIR>/lrc/.vimrc ~/.vimrc
 ```
-3. 打开一个Vim/gVim窗口，在命令模式下输入
+Windows使用如下脚本
+```
+copy <DIR>/lrc/.vimrc c:\users\<用户名>\_vimrc
+```
+c. 打开一个Vim/gVim窗口，在命令模式下输入
 ```
 :PluginInstall
 ```
