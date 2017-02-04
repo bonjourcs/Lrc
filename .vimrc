@@ -75,6 +75,8 @@ set fileencodings=utf-8,gbk,gb2312,chinese
 set fileencoding=utf-8
 if has("win32")
     set fileencoding=chinese
+	"解决终端乱码
+	set termencoding=gbk "中文环境终端的默认编码,chcp 可更改默认编码
 else
     set fileencoding=utf-8
 endif
@@ -82,8 +84,6 @@ endif
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 language message zh_CN.UTF-8
-"解决终端乱码
-set termencoding=gbk "中文环境终端的默认编码,chcp 可更改默认编码
 "==================================================
 "                   自动补全设置
 "==================================================
