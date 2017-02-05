@@ -1,4 +1,4 @@
-# lrc <a href="https://github.com/bonjourcs/lrc"><img src="https://img.shields.io/badge/lrc-v1.3.1-blue.svg"></a>
+# lrc [![lrc-v1.3.1](https://img.shields.io/badge/lrc-v1.3.1-blue.svg)](https://github.com/bonjourcs/lrc)
 lrc是本人的Vim配置备份文件，使用[Vundle](https://github.com/VundleVim/Vundle.vim)进行插件管理。
 
 # 预备工具
@@ -7,7 +7,7 @@ lrc是本人的Vim配置备份文件，使用[Vundle](https://github.com/VundleV
 
 # 安装
 ## 安装Git
-Git的详细配置教程可以在[ProGit(中文版)](http://git.oschina.net/progit/)找到，使用lrc时，只需要在[Git官网](https://git-scm.com/downloads)下载合适的版本，并把git命令加入环境变量。
+Git的详细配置教程可以在[ProGit(中文版)](http://git.oschina.net/progit/)找到，使用lrc时，只需要在[Git官网](https://git-scm.com/downloads)下载合适的版本，并把git命令加入[环境变量](https://zh.wikipedia.org/wiki/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)中即可。
 ## 安装Vundle
 - Linux
 在终端输入：
@@ -37,6 +37,13 @@ c. 打开一个Vim/gVim窗口，在命令模式下输入
 ```
 :PluginInstall
 ```
+
+# 待办事项
+
+- [ ] 编写install.sh自动安装
+- [ ] 编写配置脚本，管理已经安装的插件 
+
+
 # 更新列表
 - v1.3.1
 整理lrc安装文档
