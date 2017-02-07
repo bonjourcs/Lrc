@@ -19,7 +19,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 git clone https://github.com/VundleVim/Vundle.vim.git C:\Users\<你的用户名>\.vim\bundle\Vundle.vim
 ```
-如果克隆Vundle仓库到本地出现`目录不存在`提示，请手动在家目录(Linux)或者用户目录(Windows)下创建「.vim/bundle」目录
+如果克隆Vundle仓库到本地出现`目录不存在`提示，请手动在家目录(Linux)或者用户目录(Windows)下创建「.vim/bundle/Vundle.vim」级联目录
 ## 使用lrc
 a. 在任意一个Windows/Linux目录(**DIR**)，打开命令提示行/终端，输入如下脚本：
 ```
