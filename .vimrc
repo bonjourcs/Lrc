@@ -129,7 +129,7 @@ Plugin 'majutsushi/tagbar'
 "|---超级tab键
 Plugin 'ervandew/supertab'
 "|---多行游标
-Plugin 'terryma/vim-mulitple-cursors'
+Plugin 'terryma/vim-multiple-cursors'
 "|---匹配括号
 Plugin 'tpope/vim-surround'
 "|---注释神器
