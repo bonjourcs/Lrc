@@ -141,6 +141,8 @@ Plugin 'a.vim'
 Plugin 'scrooloose/nerdtree'
 "|---Python-mode
 Plugin 'klen/python-mode'
+"|---ASCII绘图
+Plugin 'DrawIt'
 call vundle#end()
 filetype plugin indent on
 "==================================================
