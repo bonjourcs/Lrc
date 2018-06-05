@@ -42,7 +42,11 @@ set guioptions-=T
 set guioptions-=m
 "设置状态栏宽度
 set laststatus=2
-"高亮光标所在当前行
+"动态高亮搜索关键字
+set incsearch
+"设置不可见字符可见
+set list
+set listchars=eol:$,tab:&-,trail:~,extends:>,precedes:<
 "==================================================
 "                    缩进设置
 "==================================================
